@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML App
+		</div>
+		<h2>Sentiment Analysis for movie review</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for your review</b></p>
+	<div class="results">
+
+	<html>
+	<body>
+		<p>Your review: {{ review }}</p>
+		<p>Predicted polarity: {{ polarity }}</p>
+		<p>Predicted subjectivity: {{ subjectivity }}</p>
+		<p>Hint: Subjectivity can actually be wrong, or far from the truth, whereas objectivity means being as close to the truth as possible.</p>
+	</body>
+	</html>
+		
+	{% if prediction == 1%}
+	<h2 style="color:green;">Positive Sentiment</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:red;">Negative Sentiment</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
